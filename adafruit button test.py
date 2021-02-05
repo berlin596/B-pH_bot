@@ -38,7 +38,7 @@ while True:
             sleep(int(volume))
             pump.motor1.throttle = 0
     elif mode == "Auto":
-        low_point = aio.receive(slider.key)
+        low_point = aio.receive(pH_low_point.key)
         low_point_value=low_point.value
         if pH < float(low_point_value):
            pump.motor1.throttle = 1.0
